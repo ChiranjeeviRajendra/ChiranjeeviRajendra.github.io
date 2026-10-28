@@ -5,7 +5,7 @@ const contacts = [
   { label: 'Call', href: 'tel:+917899782057', svg: callSvg, accessibleLabel: 'Call Chiranjeevi' },
   { label: 'Github', href: 'https://github.com/ChiranjeeviRajendra', svg: githubSvg, accessibleLabel: 'Chiranjeevi on Github' },
   { label: 'WhatsApp', href: 'https://api.whatsapp.com/send?phone=+917899782057', svg: whatsappSvg, accessibleLabel: 'Message Chiranjeevi on WhatsApp' },
-  { label: 'Mail', href: 'mailto:crjirja@gmail.com', svg: mailSvg, accessibleLabel: 'Email Chiranjeevi' },
+  { label: 'Mail', href: 'mailto:chiranrajen@gmail.com', svg: mailSvg, accessibleLabel: 'Email Chiranjeevi' },
 ]
 </script>
 
