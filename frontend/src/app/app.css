@@ -1,0 +1,177 @@
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  padding: 8px 24px;
+  background: var(--portfolio-accent);
+  color: #fff;
+}
+
+.brand {
+  margin-left: auto;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+}
+
+.toolbar svg, .sidebar svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  align-items: start;
+  gap: 26px;
+  max-width: 1600px;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  position: sticky;
+  top: 80px;
+  max-height: calc(100dvh - 96px);
+  overflow-y: auto;
+  padding: 16px 0;
+  background: var(--portfolio-accent);
+  border-radius: 14px;
+  color: #fff;
+}
+
+.profile {
+  margin: 0 12px 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ffffff63;
+  text-align: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile h2 {
+  margin: 8px 0 2px;
+}
+
+.profile p {
+  font-size: .9rem;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 4px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar nav a:hover, .sidebar nav a.is-active {
+  background: #ffffff26;
+}
+
+.sidebar :focus-visible, .toolbar :focus-visible {
+  outline-color: #fff;
+  outline-offset: -3px;
+}
+
+.content {
+  min-width: 0;
+  padding-bottom: 16px;
+  overflow-wrap: anywhere;
+}
+
+.content:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 50;
+  padding: 8px 16px;
+  background: #fff;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 1000px) {
+  .app-layout {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  body.navigation-open {
+    overflow: hidden;
+  }
+
+  .toolbar {
+    min-height: 56px;
+    padding: 6px 12px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .app-layout {
+    display: block;
+    padding: 12px;
+  }
+
+  .sidebar {
+    display: none;
+    position: fixed;
+    z-index: 25;
+    top: 68px;
+    bottom: 12px;
+    left: 12px;
+    width: min(250px, calc(100vw - 48px));
+    max-height: calc(100dvh - 80px);
+  }
+
+  .sidebar.is-open {
+    display: block;
+  }
+
+  .navigation-backdrop {
+    position: fixed;
+    z-index: 20;
+    inset: 56px 0 0;
+    background: #10112580;
+  }
+}
