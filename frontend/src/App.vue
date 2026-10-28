@@ -95,7 +95,7 @@ onBeforeUnmount(() => {
     <div v-if="menuOpen" class="navigation-backdrop" aria-hidden="true" @click="closeMenu(true)"></div>
     <aside id="portfolio-navigation" ref="sidebar" class="sidebar" :class="{ 'is-open': menuOpen }">
       <div class="profile">
-        <img :src="assetUrl('banner2.jpg')" alt="Chiranjeevi" width="130" height="130">
+        <img :src="assetUrl('my_photo1.jpg')" alt="Chiranjeevi" width="130" height="130">
         <h2>Chiranjeevi</h2>
         <p>Software Engineer</p>
       </div>

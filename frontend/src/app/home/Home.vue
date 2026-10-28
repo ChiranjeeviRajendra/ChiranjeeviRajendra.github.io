@@ -2,7 +2,6 @@
 import { defineAsyncComponent, useId } from 'vue'
 import { sectionComponents } from '../app.routes'
 import Disclosure from '../shared/Disclosure.vue'
-import Carousel from './Carousel.vue'
 
 const group = useId()
 const sections = [
@@ -17,7 +16,6 @@ const sections = [
 
 <template>
   <div class="home">
-    <Carousel />
     <section class="card welcome">
       <h1>Welcome To My Portfolio</h1>
       <p>Hi! This is Chiranjeevi, a Senior Software Engineer, not by destiny but by passion</p>
