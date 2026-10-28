@@ -1,11 +1,11 @@
 <script setup>
-import { assetUrl } from '../shared/assets'
+import { callSvg, githubSvg, mailSvg, whatsappSvg } from '../../style/svgs'
 
 const contacts = [
-  { label: 'Call', href: 'tel:+917899782057', image: 'logo1.png', accessibleLabel: 'Call Chiranjeevi' },
-  { label: 'Github', href: 'https://github.com/ChiranjeeviRajendra', image: 'github-logo.png', accessibleLabel: 'Chiranjeevi on Github' },
-  { label: 'WhatsApp', href: 'https://api.whatsapp.com/send?phone=+917899782057', image: 'logo4.jpg', accessibleLabel: 'Message Chiranjeevi on WhatsApp' },
-  { label: 'Mail', href: 'mailto:crjirja@gmail.com', image: 'logo2.png', accessibleLabel: 'Email Chiranjeevi' },
+  { label: 'Call', href: 'tel:+917899782057', svg: callSvg, accessibleLabel: 'Call Chiranjeevi' },
+  { label: 'Github', href: 'https://github.com/ChiranjeeviRajendra', svg: githubSvg, accessibleLabel: 'Chiranjeevi on Github' },
+  { label: 'WhatsApp', href: 'https://api.whatsapp.com/send?phone=+917899782057', svg: whatsappSvg, accessibleLabel: 'Message Chiranjeevi on WhatsApp' },
+  { label: 'Mail', href: 'mailto:crjirja@gmail.com', svg: mailSvg, accessibleLabel: 'Email Chiranjeevi' },
 ]
 </script>
 
@@ -21,7 +21,7 @@ const contacts = [
       <li v-for="contact in contacts" :key="contact.label">
         <a :href="contact.href" :aria-label="contact.accessibleLabel">
           <strong>{{ contact.label }}</strong>
-          <img :src="assetUrl(contact.image)" alt="" width="50" height="50" loading="lazy" decoding="async">
+          <span class="contact-icon" v-html="contact.svg"></span>
         </a>
       </li>
     </ul>
@@ -66,7 +66,7 @@ const contacts = [
   background: var(--portfolio-soft);
 }
 
-.contact-list img {
-  object-fit: contain;
+.contact-icon {
+  display: flex;
 }
 </style>
